@@ -9,5 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# main code
-add_executable(main main.cpp reg.cpp)
+include_directories(src)
+
+add_subdirectory(src)
+add_subdirectory(test)
+add_subdirectory(lib/googletest)

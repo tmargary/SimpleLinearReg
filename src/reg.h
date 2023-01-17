@@ -16,6 +16,8 @@ public:
 	void calcIntercept();
 	void printFit();
 	void fit();
+	float getCoeff(){return coeff;}
+	float getIntercept(){return intercept;}
     
 private:
 	vector<float> X;
