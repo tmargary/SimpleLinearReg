@@ -1,10 +1,25 @@
 #include <iostream>
 #include <stdio.h>
 #include <vector>
+
 using namespace std;
 
 #include "reg.h"
+#include "math_form.h"
 
+void Regression::fit(){
+
+    if (!isFit){
+        sumX = std::accumulate(X.begin(), X.end(), 0.0);
+        sumY = std::accumulate(Y.begin(), Y.end(), 0.0);
+        sumXY = DotProd(X, Y);
+        sumXsquare = SumOfSquares(X);
+        sumYsquare = SumOfSquares(Y);
+        calcCoef();
+        calcIntercept();
+    }  
+    
+}
 
 void Regression::calcCoef()
 {
@@ -20,24 +35,6 @@ void Regression::calcIntercept()
     float numtr = (sumY * sumXsquare - sumX * sumXY);
     float dumtr = (N * sumXsquare - sumX * sumX);
     intercept = numtr / dumtr;
-}
-
-void Regression::fit(){
-
-    if (!isFit){
-        float N = X.size();
-        for (int i=0; i < N; ++i){
-            sumXY += X[i] * Y[i];
-            sumX += X[i];
-            sumY += Y[i];
-            sumXsquare += X[i] * X[i];
-            sumYsquare += Y[i] * Y[i];
-        }
-
-        calcCoef();
-        calcIntercept();
-    }  
-    
 }
 
 void Regression::printFit()

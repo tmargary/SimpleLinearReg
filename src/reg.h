@@ -8,7 +8,7 @@ using namespace std;
 class Regression
 {
 public:
-	Regression(vector<float> X, vector<float> Y){
+	Regression(const vector<float> X, const vector<float> Y){
         this->X = X;
         this->Y = Y;
     };
