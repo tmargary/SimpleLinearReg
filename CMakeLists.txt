@@ -10,4 +10,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # main code
-add_executable(main main.cpp)
+add_executable(main main.cpp reg.cpp)

@@ -2,24 +2,17 @@
 #include <stdio.h>
 using namespace std;
 
-#include "reg.cpp"
+#include "reg.h"
 
 // Driver code
 int main()
 {
-    freopen("/home/tigran/Documents/_current/SimpleLinearReg/input.txt", "r", stdin);
-    Regression reg;
+    std::vector<float> X {1714, 1664, 1760, 1685, 1693, 1670};
+    std::vector<float> Y {2.4, 2.52, 2.54, 2.74, 2.83, 2.91};
 
-    // (xi, yi)
-    int n;
-    cin >> n;
-
-    std::cout << n << std::endl;
-
-    // Calling function takeInput to
-    // take input of n pairs
-    reg.takeInput(n);
+    Regression reg(X, Y);
 
     // Printing the best fitting line
-    reg.PrintBestFittingLine();
+    reg.fit();
+    reg.printFit();
 }
