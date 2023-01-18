@@ -9,3 +9,5 @@ add_executable(${BINARY} ${TEST_SOURCES})
 add_test(NAME ${BINARY} COMMAND ${BINARY})
 
 target_link_libraries(${BINARY} PUBLIC ${CMAKE_PROJECT_NAME}_lib gtest)
+
+# ref: https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html

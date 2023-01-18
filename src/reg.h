@@ -8,7 +8,7 @@ using namespace std;
 class Regression
 {
 public:
-	Regression(const vector<float> X, const vector<float> Y){
+	Regression(const vector<double> X, const vector<double> Y){
         this->X = X;
         this->Y = Y;
     };
@@ -16,19 +16,19 @@ public:
 	void calcIntercept();
 	void printFit();
 	void fit();
-	float getCoeff(){return coeff;}
-	float getIntercept(){return intercept;}
+	double getCoeff(){return coeff;}
+	double getIntercept(){return intercept;}
     
 private:
-	vector<float> X;
-	vector<float> Y;
-	float coeff=0;
-	float intercept=0;
-	float sumXY=0;
-	float sumX=0;
-	float sumY=0;
-	float sumXsquare=0;
-	float sumYsquare=0;
+	vector<double> X;
+	vector<double> Y;
+	double coeff=0;
+	double intercept=0;
+	double sumXY=0;
+	double sumX=0;
+	double sumY=0;
+	double sumXsquare=0;
+	double sumYsquare=0;
 	bool isFit=false;
 };
 

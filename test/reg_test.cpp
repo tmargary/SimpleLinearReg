@@ -1,15 +1,44 @@
 #include "reg.h"
+#include "math_form.h"
+#include "const.h"
 #include <gtest/gtest.h>
 
-TEST(reg_Test, TestOne)
+TEST(reg_Test, TestCoeff)
 {
-    std::vector<float> X {1714, 1664, 1760, 1685, 1693, 1670};
-    std::vector<float> Y {2.4, 2.52, 2.54, 2.74, 2.83, 2.91};
-
     Regression reg(X, Y);
     reg.fit();
     
-    const auto expected = 6.94098;
+    const auto expected = coeff;
     const auto actual = reg.getCoeff();
-    ASSERT_EQ(expected, actual);
+    ASSERT_NEAR(expected, actual, 1e-6);
+}
+
+TEST(reg_Test, TestIntercept)
+{
+    Regression reg(X, Y);
+    reg.fit();
+    
+    const auto expected = intercept;
+    const auto actual = reg.getIntercept();
+    ASSERT_NEAR(expected, actual, 1e-6);
+}
+
+TEST(math_form_Test, TestDotProd)
+{    
+    const auto expected = dot_prod_xy;
+    const auto actual = DotProd(X, Y);
+    ASSERT_NEAR(expected, actual, 1e-6);
+}
+
+TEST(math_form_Test, TestSumOfSquares)
+{    
+    const auto expected = sum_of_squares_x;
+    const auto actual = SumOfSquares(X);
+    ASSERT_NEAR(expected, actual, 1e-6);
+}
+
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

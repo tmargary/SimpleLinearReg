@@ -5,14 +5,8 @@
 #include <numeric>
 using namespace std;
 
-float DotProd(const vector<float>& a, const vector<float>& b)
-{
-    return std::inner_product(a.begin(), a.end(), b.begin(), 0.0);
-}
+double DotProd(const vector<double>& a, const vector<double>& b);
 
-float SumOfSquares(const vector<float>& a)
-{
-    return DotProd(a, a);
-}
+double SumOfSquares(const vector<double>& a);
 
 #endif

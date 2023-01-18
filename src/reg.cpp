@@ -23,17 +23,17 @@ void Regression::fit(){
 
 void Regression::calcCoef()
 {
-    float N = X.size();
-    float numtr = (N * sumXY - sumX * sumY);
-    float dumtr = (N * sumXsquare - sumX * sumX);
+    double N = X.size();
+    double numtr = (N * sumXY - sumX * sumY);
+    double dumtr = (N * sumXsquare - sumX * sumX);
     coeff = numtr / dumtr;
 }
 
 void Regression::calcIntercept()
 {
-    float N = X.size();
-    float numtr = (sumY * sumXsquare - sumX * sumXY);
-    float dumtr = (N * sumXsquare - sumX * sumX);
+    double N = X.size();
+    double numtr = (sumY * sumXsquare - sumX * sumXY);
+    double dumtr = (N * sumXsquare - sumX * sumX);
     intercept = numtr / dumtr;
 }
 

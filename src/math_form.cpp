@@ -3,12 +3,12 @@
 #include <numeric>
 using namespace std;
 
-float DotProd(const vector<float>& a, const vector<float>& b)
+double DotProd(const vector<double>& a, const vector<double>& b)
 {
     return std::inner_product(a.begin(), a.end(), b.begin(), 0.0);
 }
 
-float SumOfSquares(const vector<float>& a)
+double SumOfSquares(const vector<double>& a)
 {
     return DotProd(a, a);
 }
