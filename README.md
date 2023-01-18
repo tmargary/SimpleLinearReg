@@ -7,6 +7,7 @@ Simple Linear Regression Implementation In C++
 3. `make all && ./test/SimpleLinearReg_test`
 
 ### Usage Example
+```
 int main()
 {
     std::vector<double> X {1714, 1664, 1760, 1685, 1693, 1670};
@@ -16,6 +17,7 @@ int main()
     reg.fit();
     reg.printFit();
 }
+```
 
 ### Minimum Requirements
 - Linux
