@@ -4,8 +4,8 @@
 
 using namespace std;
 
-#include "reg.h"
-#include "math_form.h"
+#include <reg/reg.h>
+#include <math_form/math_form.h>
 
 void Regression::fit(){
 
