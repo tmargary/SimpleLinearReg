@@ -2,7 +2,7 @@
 Simple Linear Regression Implementation In C++
 
 ### Installation
-1. `git clone --recurse-submodules git@github.com:tmargary/SimpleLinearReg.git`
+1. `git clone git@github.com:tmargary/SimpleLinearReg.git`
 2. `cd SimpleLinearReg && mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"`
 3. `make all && ./test/SimpleLinearReg_test`
 
