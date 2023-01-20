@@ -1,13 +1,11 @@
-set(BINARY ${CMAKE_PROJECT_NAME}_test)
+# GTest include code would
+# go somewhere in here
 
-file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.h *.cpp)
+add_executable(reg_test reg_test.cpp)
 
-set(SOURCES ${TEST_SOURCES})
+target_link_libraries(reg_test
+ PRIVATE
+  GTest::GTest
+  reg)
 
-add_executable(${BINARY} ${TEST_SOURCES})
-
-add_test(NAME ${BINARY} COMMAND ${BINARY})
-
-target_link_libraries(${BINARY} PUBLIC ${CMAKE_PROJECT_NAME}_lib gtest)
-
-# ref: https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html
+add_test(reg_gtests reg_test)
