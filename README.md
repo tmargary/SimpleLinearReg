@@ -3,8 +3,9 @@ Simple Linear Regression Implementation In C++
 
 ### Installation
 1. `git clone git@github.com:tmargary/SimpleLinearReg.git`
-2. `cd SimpleLinearReg && mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"`
-3. `make all && ./test/SimpleLinearReg_test`
+2. `cd SimpleLinearReg`
+3. `cmake -B [build directory] -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake`
+4. `./test/reg_test`
 
 ### Usage Example
 ```
