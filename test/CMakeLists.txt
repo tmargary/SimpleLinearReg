@@ -1,6 +1,8 @@
 # GTest include code would
 # go somewhere in here
 
+find_package(GTest REQUIRED)
+
 add_executable(reg_test reg_test.cpp)
 
 target_link_libraries(reg_test
