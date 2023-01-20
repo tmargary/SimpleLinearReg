@@ -1,5 +1,5 @@
-#include "reg.h"
-#include "math_form.h"
+#include <reg/reg.h>
+#include <math_form/math_form.h>
 #include "const.h"
 #include <gtest/gtest.h>
 
